@@ -1,12 +1,12 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
+    box-sizing: border-box;
   }
   html{
     font-size: 10px;
-    font-family: 'Roboto', sans-serif;
-    color: #000000;
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
   }
   .wrapper{
     width: 100%;
@@ -35,14 +35,14 @@
     position: relative;
   }
   header{
-    
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/background.png");
-  height: 95vh;
-  width:100%;
-  background-position: center;
+   
+  height: 100vh;
+  width:100%; 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/background.png");
+   position: relative ;/*background-position: center;*/
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  
   background-attachment: fixed;
   }
   
@@ -70,31 +70,59 @@
     text-align: center;
     z-index: 1;
   }
-  .m{
-    position: absolute;
-    top: 0%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    length:60%;
-    width:60%;
-    text-align: center;
-    z-index: 1;
-    opacity: 0.85;
-    position:relative;
-    animation:3s rotate infinite linear;
-  }
   
-  @keyframes rotate{
-    from{ 
-      transform:rotate(0deg);
-    }
-    to{
-      transform:rotate(360deg);
-    }
-  }
+  .m {
+    
+    width: 22rem;
+    height: 22rem;
+    margin-top:5rem;
+    margin-left:55rem;
+    opacity: 0.9; }
+    .m1 {
+      width: 22rem;
+      height: 22rem;
+      transition: all 0.5s cubic-bezier(0.87, 0.03, 0.63, 0.6); }
+      .m1:hover {
+        transform: scale(1.1) rotate(1080deg); }
+      @media only screen and (max-height: 37.5em) {
+        .m1 {
+          transform: scale(0.8); } }
+    @media only screen and (max-width: 75em) {
+      .m {
+        margin-top: 13rem; } }
+    @media only screen and (max-height: 37.5em) {
+      .m {
+        margin-top: 2rem; } }
+        
+            
+          
+.b{
+  background-color: transparent;
+  border: 2px solid white;
+  color:white;
+  padding:15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  margin: 10rem 6rem 10rem 51rem;
+  cursor: pointer;
+  border-radius:30px;
+}
+
+.c{
+  background-color: transparent;
+  border: 2px solid white;
+  color:white;
+  padding:15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
   
-  
-  
- 
+  cursor: pointer;
+  border-radius:30px; 
+} 
+      
   
  
