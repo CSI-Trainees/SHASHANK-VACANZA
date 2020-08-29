@@ -13,6 +13,7 @@
     margin: 0px auto;
   }
   body{
+    
     width: 100%;
     height: 100%;
   }
@@ -25,15 +26,10 @@
     font-weight: 300;
   }
   
-  .container{
-    width: 90%;
-    max-width: 120rem;
-    height: 100%;
-    margin: 0 auto;
-    position: relative;
-  }
+ 
   header{
-  height: 100vh;
+    
+  height: 92vh;
   width:100%; 
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/background.png");
    position: relative ;/*background-position: center;*/
@@ -56,10 +52,9 @@
     65%  { transform: translate(0, 15px); }
     to   { transform: translate(0, -0px); }    
   }
-  
-  .main{
+     .main{
     position: absolute;
-    top: 60%;
+    top: 67%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
@@ -91,7 +86,7 @@
         margin-top: 2rem; } }
         
         
-          
+            
 .b{
   background-color: transparent;
   border: 2px solid white;
@@ -101,7 +96,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 17px;
-  margin: 10rem 6rem 10rem 51rem;
+  margin: 14rem 6rem 10rem 51rem;
   cursor: pointer;
   border-radius:30px;
 }
@@ -158,5 +153,62 @@
   background-color: #043806;
   color: white;
 }
+.r1i{
+  float:right;
+  width:340px;
+  height:295px;
+  margin-left:0rem;
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.r2i{
+  float:left;
+  width:300px;
+  height:295px;
+  margin-right:30px;
+  clip-path: polygon(0% 0%, 50% 0%, 100% 100%, 0% 100%);
+}
+.r3i{
+  float:right;
+  width:300px;
+  height:270px;
+  margin-left:1rem;
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 5rem;
+  left: 80%;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
 
- 
+.sidenav a {
+  padding: 11px 11px 11px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: fixed;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
