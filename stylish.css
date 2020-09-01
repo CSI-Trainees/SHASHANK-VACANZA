@@ -26,7 +26,6 @@ html{
   height: 92vh;/*vh->Relative to 1% of the height of the viewport*/
   width:100%; 
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/background.png");
-  position: relative ;
   background-repeat: no-repeat;/*It is used here so that background-image is not repeated.*/
   background-size: cover;/*It Resizes the background image to cover the entire container(header)anyway*/
   background-attachment: fixed;
@@ -52,7 +51,7 @@ translate is used to move element using x,y coordinates*/
    
   .main{
     position: absolute;
-    top: 58%;
+    top: 44%;
     width: 100%;
     text-align: center;
   } 
@@ -87,12 +86,12 @@ header .m img:hover{
     }
 }    
 footer{
-  display: flex;
-  flex-direction: column;
+  display: flex;/*Displays an element as a block-level flex container*/
+  flex-direction: column;/*The flexible element(icons) in footer are displayed vertically, as a column*/
   align-items: center;
   background: #00695c;
   height: 10rem;
-  position:relative;
+  position:relative;/*position is taken from its orginal place(block)*/
   overflow: hidden;/*overflow is clipped, and the rest of the content is hidden*/
 }
 footer .f{
@@ -116,11 +115,11 @@ footer .f{
   }
 }
 .fi {
-  display: flex;
+  display: flex;/* to arrange them in colomn wise*/
   padding:4rem 1rem 1rem 1rem;
   align-items: center;
   margin: 3rem 0;
-  z-index: 10;
+  z-index: 10;/*pecifies the stack order of an element.*/
   border-bottom: 1px dotted #fff; }
       
  .s {
@@ -137,7 +136,7 @@ footer .f{
   text-align: center;
   display: inline-block;/*to display list of items horizontally*/
   font-size: 17px;
-  margin: 14rem 6rem 10rem 51rem;
+  margin: 16rem 6rem 10rem 51rem;
   cursor: pointer;
   border-radius:30px;
 }
