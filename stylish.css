@@ -1,160 +1,154 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  html{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*how the width and height of an element are calculated:
+   should they include padding and borders, or not.*/
+}
+html{
     font-size: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;/* If the browser does not support the first font, it tries the next font.*/
   color: #000000;
   }
-  .wrapper{
+  .Home{
     width: 100%;
-    margin: 0px auto;
+    margin: 0px ;
   }
-  body{
-    
-    width: 100%;
-    height: 100%;
-  }
+  
   a{
     text-decoration: none;
     color:white;
   }
   p{
     font-size: 1.8rem;
-    font-weight: 300;
   }
-  
-  /*.container{
-    width: 90%;
-    max-width: 120rem;
-    height: 100%;
-    margin: 0 auto;
-    position: relative;
-  }*/
   header{
-    
-  height: 92vh;
+  height: 92vh;/*vh->Relative to 1% of the height of the viewport*/
   width:100%; 
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/background.png");
-   position: relative ;/*background-position: center;*/
-  background-repeat: no-repeat;
-  background-size: cover;
+  position: relative ;
+  background-repeat: no-repeat;/*It is used here so that background-image is not repeated.*/
+  background-size: cover;/*It Resizes the background image to cover the entire container(header)anyway*/
   background-attachment: fixed;
+  /* background-image that will not scroll with the page(fixed)and its default value is scroll*/
   }
   
   .floating {  
     animation-name: floating;
     animation-duration: 3s;
     animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;/*animation has both slow start and end*/
     margin-left: 30px;
     margin-top: 5px;
   }
-  
+/*@keyframe defines behaviour of one cycle of css animation
+transform apply 2d,3d transformation to element &
+translate is used to move element using x,y coordinates*/ 
   @keyframes floating {
     from { transform: translate(0,  0px); }
     65%  { transform: translate(0, 15px); }
-    to   { transform: translate(0, -0px); }    
+    to   { transform: translate(0, 0px); }    
   }
    
   .main{
     position: absolute;
-    top: 67%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 58%;
     width: 100%;
     text-align: center;
-    z-index: 1;
-  }     
-  .m {
-    
-    width: 22rem;
-    height: 22rem;
-    margin-top:5rem;
-    margin-left:55rem;
-    opacity: 0.9; }
-    .m1 {
-      width: 22rem;
-      height: 22rem;
-      transition: all 0.5s cubic-bezier(0.87, 0.03, 0.63, 0.6); }
-      .m1:hover {
-        transform: scale(1.1) rotate(1080deg); }
-      @media only screen and (max-height: 37.5em) {
-        .m1 {
-          transform: scale(0.8); } }
-    @media only screen and (max-width: 75em) {
-      .m {
-        margin-top: 13rem; } }
-    @media only screen and (max-height: 37.5em) {
-      .m {
-        margin-top: 2rem; } }
-       
-        .f {
-          background: #00695c;
-          height: 15rem;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          position: relative;
-          overflow: hidden; }
-         .fi {
-            display: flex;
-            padding:4rem 1rem 1rem 1rem;
-            align-items: center;
-            margin: 3rem 0;
-            z-index: 10;
-            border-bottom: 1px dotted #fff; }
-         
-       .f::before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            background-blend-mode: color;
-            background-size: cover;
-            background-image: linear-gradient(to bottom, #00695c, #00695c), url(images/footer.png);
-            position: absolute;
-            animation: scaler 20s infinite; }
-        @keyframes scaler {
-          0% {
-            transform: scale(1); }
-          50% {
-            transform: scale(1.5); }
-          100% {
-            transform: scale(1); } }    
-            .s {
-              margin: 0 1rem; }
-          .si {
-                width: 3rem;
-                height: 3rem;
-                }
-             
-            
+  } 
+  
+  header .m img{
+    margin-left:42%; 
+    width: 20rem;
+    height: 20rem;
+    margin-top: 4%;
+    opacity: 0.85;/*more the opacity darken the element*/
+    animation: bs 1s ease;
+    /*it is the animation name,duration,timing-function(ease means slow start,then fast and slow end)*/
+}
+header .m img:hover{
+    animation: s 1s ease;
+    animation-fill-mode: forwards;/*The element will move to values of last keyframe */
+}
+/* rotate is used to rotate logo and scale is used to zoom-in and zoom-out*/
+@keyframes s { 
+    from { 
+        transform: rotate(0deg) scale(1);
+    } to { 
+        transform: rotate(720deg) scale(1.1); 
+    }
+}
+
+@keyframes bs { 
+    from { 
+        transform: rotate(720deg) scale(1.1);
+    } to { 
+        transform: rotate(0deg) scale(1); 
+    }
+}    
+footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #00695c;
+  height: 10rem;
+  position:relative;
+  overflow: hidden;/*overflow is clipped, and the rest of the content is hidden*/
+}
+footer .f{
+  height: 100%;
+  width: 100%;
+  background-blend-mode: color;
+  background-image:linear-gradient(to bottom, #00695c, #00695c), url(images/footer.png);
+  background-size:cover;
+  position:absolute;
+  animation: scale 10s infinite;
+}
+@keyframes scale{
+  0%{
+      transform: scale(1);/*It is used for zoom-in and zoom-out*/
+  }
+  50%{
+      transform: scale(2);
+  }
+  100%{
+    transform:scale(1);
+  }
+}
+.fi {
+  display: flex;
+  padding:4rem 1rem 1rem 1rem;
+  align-items: center;
+  margin: 3rem 0;
+  z-index: 10;
+  border-bottom: 1px dotted #fff; }
+      
+ .s {
+      margin: 0 1rem; }
+.si {
+      width: 3rem;
+      height: 3rem;
+     }
   .b{ 
   background-color: transparent;
   border: 2px solid white;
   color:white;
   padding:15px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
+  display: inline-block;/*to display list of items horizontally*/
   font-size: 17px;
   margin: 14rem 6rem 10rem 51rem;
   cursor: pointer;
   border-radius:30px;
 }
-
 .c{
   background-color: transparent;
   border: 2px solid white;
   color:white;
   padding:15px;
   text-align: center;
-  text-decoration: none;
   display: inline-block;
   font-size: 17px;
-  
   cursor: pointer;
   border-radius:30px; 
 } 
@@ -178,31 +172,28 @@
   margin:5rem 8rem 8rem 8rem;
 }
 .r1 {
-  border: none;
   color: white;
   padding: 12px 24px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 15px;
   margin: 3rem 2rem 2rem 2rem;
-  transition-duration: 0.4s;
-  cursor: pointer;
+  transition-duration: 0.4s;/*Time taken for effect*/
+  cursor: pointer;/*when we hover a pointer is made*/
   background-color: white; 
   color: black; 
   border: 2px solid #043806;
-  border-radius:5px;
+  border-radius:5px;/*It is used to make button in round shape*/
 }
 .r1:hover {
   background-color: #043806;
   color: white;
 }
 .r1i{
-  float:right;
+  float:right;/*It tells how element should float in container*/
   width:340px;
   height:295px;
   margin-left:0rem;
-  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);/*It is used to set(crop) the image*/
 }
 .r2i{
   float:left;
@@ -217,42 +208,4 @@
   height:270px;
   margin-left:1rem;
   clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
-}
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 5rem;
-  left: 80%;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidenav a {
-  padding: 11px 11px 11px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-  position: fixed;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
 }
