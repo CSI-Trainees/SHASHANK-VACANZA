@@ -22,9 +22,18 @@
             <div class="main">
                <img class="floating" src="images/vac.svg" style="height:50%;width:50%">
             </div> 
-           <button class="b ">REGISTER</button>
-           <button class="c">START QUIZ</button>
+           <button class="b "><span>REGISTER</span></button>
+           <button class="c"><span>START QUIZ</span></button>
         </header>
+        <nav id="sideNav">
+            <ul>
+                <li>
+                    <a href="#home">HOME</a>
+                    <a href="#round">ROUNDS</a>
+                    <a href="#">QUIZZES</a>
+                </li>
+            </ul>
+        </nav>
     </div>
      <div class="Round" id="round">
          <div class="Round1">
@@ -58,7 +67,20 @@
              <br>
              <button class="r1">RULES</button>
         </div>  
-     </div> 
+     </div>
+     <img src="images/mB.png" id="menuBtn">
+    <script>
+        var menuBtn = document.getElementById("menuBtn");
+        var topNav = document.getElementById("sideNav");
+        sideNav.style.right="-300px";
+        menuBtn.onclick=function(){
+            if(sideNav.style.right=="-300px"){
+                sideNav.style.right="110px";
+            } else {
+                sideNav.style.right="-300px";
+            }
+        }
+    </script> 
      <footer>
          <div class="f">
 
