@@ -2,12 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /*how the width and height of an element are calculated:
-   should they include padding and borders, or not.*/
+ 
 }
 html{
     font-size: 10px;
-  font-family: 'Roboto', sans-serif;/* If the browser does not support the first font, it tries the next font.*/
+  font-family: 'Roboto', sans-serif;
   color: #000000;
   }
   .Home{
@@ -23,26 +22,24 @@ html{
     font-size: 1.8rem;
   }
   header{
-  height: 92vh;/*vh->Relative to 1% of the height of the viewport*/
+  height: 92vh;
   width:100%; 
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/background.png");
-  background-repeat: no-repeat;/*It is used here so that background-image is not repeated.*/
-  background-size: cover;/*It Resizes the background image to cover the entire container(header)anyway*/
+  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
-  /* background-image that will not scroll with the page(fixed)and its default value is scroll*/
+ 
   }
   
   .floating {  
     animation-name: floating;
     animation-duration: 3s;
     animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;/*animation has both slow start and end*/
+    animation-timing-function: ease-in-out;
     margin-left: 30px;
     margin-top: 5px;
   }
-/*@keyframe defines behaviour of one cycle of css animation
-transform apply 2d,3d transformation to element &
-translate is used to move element using x,y coordinates*/ 
+
   @keyframes floating {
     from { transform: translate(0,  0px); }
     65%  { transform: translate(0, 15px); }
@@ -61,15 +58,15 @@ translate is used to move element using x,y coordinates*/
     width: 20rem;
     height: 20rem;
     margin-top: 4%;
-    opacity: 0.85;/*more the opacity darken the element*/
+    opacity: 0.85;
     animation: bs 1s ease;
-    /*it is the animation name,duration,timing-function(ease means slow start,then fast and slow end)*/
+
 }
 header .m img:hover{
     animation: s 1s ease;
-    animation-fill-mode: forwards;/*The element will move to values of last keyframe */
+    animation-fill-mode: forwards;
 }
-/* rotate is used to rotate logo and scale is used to zoom-in and zoom-out*/
+
 @keyframes s { 
     from { 
         transform: rotate(0deg) scale(1);
@@ -86,13 +83,13 @@ header .m img:hover{
     }
 }    
 footer{
-  display: flex;/*Displays an element as a block-level flex container*/
-  flex-direction: column;/*The flexible element(icons) in footer are displayed vertically, as a column*/
+  display: flex;
+  flex-direction: column;
   align-items: center;
   background: #00695c;
   height: 10rem;
-  position:relative;/*position is taken from its orginal place(block)*/
-  overflow: hidden;/*overflow is clipped, and the rest of the content is hidden*/
+  position:relative;
+  overflow: hidden;
 }
 footer .f{
   height: 100%;
@@ -105,7 +102,7 @@ footer .f{
 }
 @keyframes scale{
   0%{
-      transform: scale(1);/*It is used for zoom-in and zoom-out*/
+      transform: scale(1);
   }
   50%{
       transform: scale(2);
@@ -115,11 +112,11 @@ footer .f{
   }
 }
 .fi {
-  display: flex;/* to arrange them in colomn wise*/
+  display: flex;
   padding:4rem 1rem 1rem 1rem;
   align-items: center;
   margin: 0rem 0 4rem 0;
-  z-index: 10;/*pecifies the stack order of an element.*/
+  z-index: 10;
   border-bottom: 1px dotted #fff; }
       
  .s {
@@ -134,7 +131,7 @@ footer .f{
   color:white;
   padding:15px;
   text-align: center;
-  display: inline-block;/*to display list of items horizontally*/
+  display: inline-block;
   font-size: 17px;
   margin: 16rem 6rem 10rem 51rem;
   cursor: pointer;
@@ -202,23 +199,23 @@ footer .f{
   text-align: center;
   font-size: 15px;
   margin: 3rem 2rem 2rem 2rem;
-  transition-duration: 0.4s;/*Time taken for effect*/
-  cursor: pointer;/*when we hover a pointer is made*/
+  transition-duration: 0.4s;
+  cursor: pointer;
   background-color: white; 
   color: black; 
   border: 2px solid #043806;
-  border-radius:5px;/*It is used to make button in round shape*/
+  border-radius:5px;
 }
 .r1:hover {
   background-color: #043806;
   color: white;
 }
 .r1i{
-  float:right;/*It tells how element should float in container*/
+  float:right;
   width:340px;
   height:295px;
   margin-left:0rem;
-  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);/*It is used to set(crop) the image*/
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 .r2i{
   float:left;
